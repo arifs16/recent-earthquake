@@ -3,16 +3,7 @@ from bs4 import BeautifulSoup
 
 
 def ekstraksi_data():
-    """
-    Tanggal: 12 Maret 2023
-    Waktu: 20:26:25 WIB
-    Magnitudo: 2.5
-    Kedalaman: 8 km
-    Koordinat: LS=2.5 BT=140.68
-    Lokasi: Pusat gempa berada di darat 6 km baratlaut Kota Jayapura
-    Dirasakan: Dirasakan (Skala MMI): II Kota Jayapura
-    :return:
-    """
+
     try:
         content = requests.get('https://bmkg.go.id')
     except Exception:

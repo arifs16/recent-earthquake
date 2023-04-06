@@ -59,15 +59,16 @@ def tampilkan_data(result):
         print('Tidak bisa menemukan data gempa terkini')
         return
 
-    print('Gempa terakhir berdasarkan BMKG')
-    print(f"Tanggal {result['tanggal']}")
-    print(f"Waktu {result['waktu']}")
-    print(f"Magnitudo {result['magnitudo']}")
-    print(f"Kedalaman {result['kedalaman']}")
-    print(f"Koordinat: {result['koordinat']['ls']}, {result['koordinat']['bt']}")
-    print(f"Lokasi {result['lokasi']}")
+    print('The last earthquake based on BMKG')
+    print(f"Date {result['tanggal']}")
+    print(f"Time {result['waktu']}")
+    print(f"Magnitude {result['magnitudo']}")
+    print(f"Depth {result['kedalaman']}")
+    print(f"Coordinate: {result['koordinat']['ls']}, {result['koordinat']['bt']}")
+    print(f"Location {result['lokasi']}")
     print(f"{result['dirasakan']}")
 
 if __name__ == '__main__':
+    print('Package description', description)
     result = ekstraksi_data()
     tampilkan_data(result)

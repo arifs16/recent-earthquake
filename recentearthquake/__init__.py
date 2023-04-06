@@ -2,14 +2,15 @@ import requests
 import bs4
 
 class RecentEarthquake:
-    def __init__(self):
+    def __init__(self, url):
         self.description = 'To get the recent earthquake in Indonesia from BMKG.go.id'
         self.result = None
+        self.url = url
 
     def ekstraksi_data(self):
 
         try:
-            content = requests.get('https://bmkg.go.id')
+            content = requests.get(self.url)
         except Exception:
             return None
         if content.status_code == 200:
@@ -77,8 +78,8 @@ class RecentEarthquake:
         self.tampilkan_data()
 
 if __name__ == '__main__':
-    earthquake_in_indonesia = RecentEarthquake()
+    earthquake_in_indonesia = RecentEarthquake('https://bmkg.go.id')
     print('Package description', earthquake_in_indonesia.description)
     earthquake_in_indonesia.run()
-#        earthquake_in_indonesia.ekstraksi_data()
-#       earthquake_in_indonesia.tampilkan_data()
+    # earthquake_in_indonesia.ekstraksi_data()
+    # earthquake_in_indonesia.tampilkan_data()
